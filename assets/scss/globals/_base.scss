@@ -1,0 +1,113 @@
+html, body {
+  width: 100%;
+  font-family: $f-regular;
+  font-size: 16px;
+  color: $black;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  &.overflow {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &.overflow2 {
+    overflow: hidden;
+    width: 100%;
+  }
+}
+
+.wrap {
+  margin: 0 auto;
+  padding: 0 40px;
+  max-width: 1280px;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include mob() {
+    padding: 0 20px;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
+
+.hidden-maxDes {
+  @include des() {
+    display: none !important;
+  }
+}
+
+.hidden-maxTab {
+  @include tab() {
+    display: none !important;
+  }
+}
+
+.hidden-maxMobTab {
+  @include mob-tab() {
+    display: none !important;
+  }
+}
+
+.hidden-maxMob {
+  @include mob() {
+    display: none !important;
+  }
+}
+
+.hidden-minDes {
+  @include des-min() {
+    display: none !important;
+  }
+}
+
+.hidden-minTab {
+  @include tab-min() {
+    display: none !important;
+  }
+}
+
+.hidden-minMobTab {
+  @include mob-tab-min() {
+    display: none !important;
+  }
+}
+
+.hidden-minMob {
+  @include mob-min() {
+    display: none !important;
+  }
+}
+
+//transition effects
+//fade1 - opacity
+.fade1-enter-active, .fade1-leave-active {
+  transition: opacity 0.2s;
+}
+
+.fade1-enter, .fade1-leave-to {
+  opacity: 0;
+}
+//fade2 - smooth moving from a side
+.fade2-enter-active, .fade2-leave-active {
+  transition: all 0.3s ease;
+}
+
+.fade2-enter, .fade2-leave-to {
+  opacity: 0;
+}
+//fade3 - opacity
+.fade3-enter-active, .fade3-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade3-enter, .fade3-leave-to {
+  opacity: 0;
+}

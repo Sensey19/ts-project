@@ -1,43 +1,38 @@
 <template>
-  <div>
-    Banner
-  </div>
+    <div>
+        Banner
+    </div>
 </template>
 
 <script lang="ts">
-// eslint-disable-next-line import/no-extraneous-dependencies
 import Vue from 'vue';
+import { User } from '~/@types/user';
 
-    interface User {
-        firstName: string,
-        lastName: string
-    }
 
 export default Vue.extend({
   props: {
     data: {
-      type: Object as () => User,
-      default: () => {},
-    },
+      type: Object as () => User
+    }
   },
   data() {
     return {
-      num: 11,
+      num: 11
     };
   },
   computed: {
     counter(): number {
       return this.num as number;
-    },
+    }
   },
   mounted(): void {
     console.log(this.data);
-    this.getUser({ firstName: 'ada', lastName: 'ddd' });
+    this.getUser({ firstName: 'fsdf', lastName: 'ddd' });
   },
   methods: {
     getUser({ firstName, lastName }: User): void {
       console.log(firstName, lastName);
-    },
-  },
+    }
+  }
 });
 </script>

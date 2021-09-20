@@ -1,0 +1,47 @@
+/* colors used on project */
+$t: transparent;
+//white colors
+$white: white;
+//black colors
+$black: #000000;
+$black-1: #0F0F0F;
+$black-2: #2A2A2D;
+//green colors
+$green: #79DA42;
+$green2: #75DA42;
+//grey colors
+$grey: #5B5B60;
+$grey-2: #B2B2B2;
+$grey-3: #CFCFCF;
+
+/* value settings for responsive developing */
+$min_width: 320px;
+$max_width: 1280px;
+$min_font: 12px;
+$max_font: 16px;
+
+/* value settings for @media queries */
+$mob-galaxyS5: 360;
+$mob-iphone6: 375;
+$mob: 480;
+$mob-tab: 768;
+$tab: 1024;
+$des: 1200;
+$des-max: 1280;
+$height-1: 900;
+$height-2: 420;
+
+/* fonts used on project */
+$f-light: 'ProximaNovaLight';
+$f-regular: 'ProximaNovaRegular';
+$f-semibold: 'ProximaNovaSemibold';
+$f-bold: 'ProximaNovaBold';
+$f-extrabld: 'ProximaNovaExtrabld';
+$f-black: 'ProximaNovaBlack';
+$f-proximaNovaExCnLight: 'ProximaNovaExCnLight';
+$f-proximaNovaExCnRegular: 'ProximaNovaExCnRegular';
+$f-proximaNovaExCnSemibold: 'ProximaNovaExCnSemibold';
+$f-proximaNovaExCnBold: 'ProximaNovaExCnBold';
+$f-proximaNovaExCnExtrabld: 'ProximaNovaExCnExtrabld';
+$f-proximaNovaExCnBlack: 'ProximaNovaExCnBlack';
+
