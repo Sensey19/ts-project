@@ -1,18 +1,18 @@
 <template>
-    <div>
-        Banner
-    </div>
+  <div>
+    Banner
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import { User } from '~/@types/user';
 
-
 export default Vue.extend({
   props: {
     data: {
-      type: Object as () => User
+      type: Object,
+      default: () => {}
     }
   },
   data() {
@@ -22,7 +22,7 @@ export default Vue.extend({
   },
   computed: {
     counter(): number {
-      return this.num as number;
+      return this.num;
     }
   },
   mounted(): void {

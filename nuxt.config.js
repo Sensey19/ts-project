@@ -52,5 +52,12 @@ export default {
   env: {
     BASE_URL: process.env.BASE_URL || 'site.com',
     CMS_URL: process.env.CMS_URL || 'site.com'
+  },
+  typescript: {
+    typeCheck: {
+      eslint: {
+        files: './**/*.{ts,js,vue}'
+      }
+    }
   }
 };
