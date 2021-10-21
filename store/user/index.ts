@@ -1,5 +1,6 @@
-import { GetterTree, ActionTree, MutationTree } from 'vuex';
-import { RootState } from '~/store';
+import {
+  getterTree, mutationTree, actionTree
+} from 'typed-vuex';
 import { MutationsList } from '~/store/-listMutations';
 import { User } from './types';
 
@@ -9,24 +10,26 @@ export const state = () => ({
     age: null
   } as User
 });
-export type UserState = ReturnType<typeof state>
 
-export const mutations: MutationTree<UserState> = {
+export const getters = getterTree(state, {
+  isUser: (state) => state.user
+});
+
+export const mutations = mutationTree(state, {
   [MutationsList.GET_USER](state, obj: {}) {
     state.user = obj;
   }
-};
+});
 
-export const actions: ActionTree<UserState, RootState> = {
-  getUser({ commit }) {
-    const user: User = {
-      firstName: 'Sensey',
-      age: 28
-    };
-    commit(MutationsList.GET_USER, user);
+export const actions = actionTree(
+  { state, getters, mutations },
+  {
+    getUser({ commit }) {
+      const user: User = {
+        firstName: 'Sensey',
+        age: 28
+      };
+      commit(MutationsList.GET_USER, user);
+    }
   }
-};
-
-export const getters: GetterTree<UserState, RootState> = {
-  user: (state) => state.user
-};
+);

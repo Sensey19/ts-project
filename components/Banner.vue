@@ -5,10 +5,11 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue';
+import mixins from 'vue-typed-mixins';
 import { User } from '~/@types/user';
+import test from '~/mixins/test';
 
-export default Vue.extend({
+export default mixins(test).extend({
   props: {
     data: {
       type: Object,
@@ -26,12 +27,11 @@ export default Vue.extend({
     }
   },
   mounted(): void {
-    console.log(this.data);
     this.getUser({ firstName: 'fsdf', lastName: 'ddd' });
   },
   methods: {
-    getUser({ firstName, lastName }: User): void {
-      console.log(firstName, lastName);
+    getUser(obj: User): void {
+      console.log(obj);
     }
   }
 });

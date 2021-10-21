@@ -30,7 +30,10 @@ export default {
     '@nuxtjs/svg-sprite',
     '@nuxtjs/style-resources'
   ],
-  buildModules: ['@nuxt/typescript-build'],
+  buildModules: [
+    '@nuxt/typescript-build',
+    'nuxt-typed-vuex'
+  ],
   pwa: {
     manifest: {
       lang: 'en'

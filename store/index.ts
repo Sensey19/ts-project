@@ -1,24 +1,32 @@
-import { GetterTree, ActionTree, MutationTree } from 'vuex';
+import {
+  getterTree, mutationTree, actionTree
+} from 'typed-vuex';
+import { Context } from '@nuxt/types';
 import { MutationsList } from './-listMutations';
 
 export const state = () => ({
   count: 0 as number
 });
-export type RootState = ReturnType<typeof state>
 
-export const mutations: MutationTree<RootState> = {
-  // eslint-disable-next-line no-return-assign
+export const getters = getterTree(state, {
+  count: (state) => state.count
+});
+
+export const mutations = mutationTree(state, {
   [MutationsList.CHANGE_COUNT](state, newVal: number) {
     state.count = newVal;
   }
-};
+});
 
-export const actions: ActionTree<RootState, RootState> = {
-  changeCount({ commit }, newVal: number) {
-    commit(MutationsList.CHANGE_COUNT, newVal);
+export const actions = actionTree(
+  { state, getters, mutations },
+  {
+    changeCount({ commit }, newVal: number) {
+      commit(MutationsList.CHANGE_COUNT, newVal);
+    },
+    async nuxtServerInit(_vuexContext, nuxtContext: Context) {
+      await nuxtContext.app.$accessor.user.getUser();
+      // console.log(nuxtContext);
+    }
   }
-};
-
-export const getters: GetterTree<RootState, RootState> = {
-  count: (state) => state.count
-};
+);

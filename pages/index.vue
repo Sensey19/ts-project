@@ -1,7 +1,11 @@
 <template>
   <div>
     home page
-    <Banner />
+    <Banner
+      :message="{
+        title: 'tille'
+      }"
+    />
     <p>{{ getCount }}</p>
     <button @click="changeCount">
       Click on!
@@ -23,19 +27,19 @@ export default Vue.extend({
   },
   computed: {
     getCount(): number {
-      return this.$store.getters.count;
+      return this.$accessor.count;
     },
     user(): {} {
-      return this.$store.getters['user/user'];
+      return this.$accessor.user.isUser;
     }
   },
   methods: {
     changeCount() {
       const newCount = Math.floor(Math.random() * (100 - 2 + 1) + 2);
-      this.$store.dispatch('changeCount', newCount);
+      this.$accessor.changeCount(newCount);
     },
     getUser() {
-      this.$store.dispatch('user/getUser');
+      this.$accessor.user.getUser();
     }
   }
 });
