@@ -1,8 +1,8 @@
 import Vue from 'vue';
-// import UiButton from '~/components/UI/Button/UiButton';
+import UiButton from '~/components/UI/Button/UiButton';
 
 const components = {
-  // UiButton
+  UiButton
 };
 
 Object.entries(components).forEach(([name, component]) => {

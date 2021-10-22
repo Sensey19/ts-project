@@ -1,5 +1,4 @@
-import Vue, { PropOptions } from 'vue';
-import { User } from '~/@types/user';
+import Vue from 'vue';
 
 type MyBoolean = true | false | null | undefined;
 
@@ -8,7 +7,7 @@ export default Vue.extend({
     message: {
       type: Object,
       required: true
-    } as PropOptions<User>
+    }
   },
   data() {
     return {
