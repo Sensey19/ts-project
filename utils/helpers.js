@@ -12,7 +12,7 @@ export const getNumberOfString = (string) => string.replace(/\D/g, '');
 export const getLettersOfString = (string) => string.replace(/[^a-zA-Z]+/g, '');
 /**
  *
- * @param value
+ * @param {*} value
  * @returns {boolean}
  */
 export const isNullOrEmpty = (value) => {
