@@ -15,7 +15,4 @@ export const getLettersOfString = (string: String) => string.replace(/[^a-zA-Z]+
  * @param {*} value
  * @returns {boolean}
  */
-export const isNullOrEmpty = (value: any) => {
-  if (!value || value === '' || value.length === 0) return true;
-  return false;
-};
+export const isNullOrEmpty = (value: any) => (!value || value.length === 0);
