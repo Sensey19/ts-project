@@ -19,12 +19,6 @@ export default mixins(test, getSomeInfo).extend({
     SomeChildrenBanner,
     SomeUiComponent
   },
-  props: {
-    data: {
-      type: Object,
-      default: () => {}
-    }
-  },
   data() {
     return {
       num: 11 as number

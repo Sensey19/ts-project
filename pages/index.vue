@@ -1,7 +1,7 @@
 <template>
   <div>
     home page
-    <Banner :message="message" />
+    <banner :message="message" />
     <p>{{ getCount }}</p>
     <button @click="changeCount">
       Click on!
