@@ -1,15 +1,15 @@
 /**
  *
- * @param string
- * @returns {void | Promise<Route> | * | boolean | Promise | Promise<any>}
- */
-export const getNumberOfString = (string: String) => string.replace(/\D/g, '');
-/**
- *
- * @param string
+ * @param value
  * @returns {string}
  */
-export const getLettersOfString = (string: String) => string.replace(/[^a-zA-Z]+/g, '');
+export const getNumberOfString = (value: string) => value.replace(/\D/g, '');
+/**
+ *
+ * @param value
+ * @returns {string}
+ */
+export const getLettersOfString = (value: string) => value.replace(/[^a-zA-Z]+/g, '');
 /**
  *
  * @param {*} value

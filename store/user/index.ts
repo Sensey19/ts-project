@@ -27,7 +27,7 @@ export const actions = actionTree(
     getUser({ commit }) {
       const user: User = {
         firstName: 'Sensey',
-        age: 28
+        age: 20
       };
       commit(MutationsList.GET_USER, user);
     }
