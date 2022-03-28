@@ -30,7 +30,7 @@ export default mixins(test, getSomeInfo).extend({
     }
   },
   mounted(): void {
-    this.getUser({ firstName: 'fsdf', lastName: 'ddd' });
+    this.getUser({ firstName: 'firstName', lastName: 'lastName' });
   },
   methods: {
     getUser(obj: IUser): void {
