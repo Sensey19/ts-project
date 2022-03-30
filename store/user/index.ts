@@ -2,7 +2,7 @@ import {
   getterTree, mutationTree, actionTree
 } from 'typed-vuex';
 import { MutationsList } from '~/store/-listMutations';
-import { User } from './types';
+import { User } from './-types';
 
 export const state = () => ({
   user: {
